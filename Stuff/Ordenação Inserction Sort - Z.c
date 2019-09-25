@@ -8,29 +8,30 @@ int main(){
 	srand(time(NULL));
 
 	for(int i=0; i < 10; i++)
-		x[i] = rand() % 21;
-
+		x[i] = 1 + rand() % 10;
+	
 	printf("\nVetor Original\n");
 	for(int i=0; i < 10; i++)
 		printf("%i\n", x[i]);
 
-	// ordenação
+	// ordenação Insertion Sort
 
-	int aux;
+	int j, aux;
 
 	for(int i=0; i < 10; i++){
-		for(int j=0; j < 10; j++){
-			if(x[j] > x[i]){
+		j = i;
 
-				aux = x[i];
-				x[i] = x[j];
-				x[j] = aux;
+		while((j != 0) && (x[j] > x[j - 1])){
 
-			}
+			aux = x[j];
+			x[j] = x[j - 1];
+			x[j - 1] = aux;
+			j--;
+
 		}
 	}
 
-	printf("\nVetor Ordenados\n");
+	printf("\nVetor Ordenado Insertion Sort\n");
 	for(int i=0; i < 10; i++)
 		printf("%i\n", x[i]);
 }

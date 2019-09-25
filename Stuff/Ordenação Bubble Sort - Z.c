@@ -8,29 +8,29 @@ int main(){
 	srand(time(NULL));
 
 	for(int i=0; i < 10; i++)
-		x[i] = rand() % 21;
+		x[i] = 1 + rand() % 10;
 
 	printf("\nVetor Original\n");
 	for(int i=0; i < 10; i++)
 		printf("%i\n", x[i]);
 
-	// ordenação
+	// ordenação Selection Sort
 
 	int aux;
 
-	for(int i=0; i < 10; i++){
-		for(int j=0; j < 10; j++){
-			if(x[j] > x[i]){
-
+	for(int j = 9; j <= 1; j--){
+		for(int i=0; i > j; i++){
+			if(x[i] > x[i + 1]){
+				
 				aux = x[i];
-				x[i] = x[j];
-				x[j] = aux;
-
+        		x[i] = x[i+1]; 
+        		x[i+1] = aux; 
+			
 			}
 		}
 	}
 
-	printf("\nVetor Ordenados\n");
+	printf("\nVetor Ordenado Bubble sort\n");
 	for(int i=0; i < 10; i++)
 		printf("%i\n", x[i]);
 }
