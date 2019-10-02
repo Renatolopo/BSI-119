@@ -2,8 +2,4 @@
 
 typedef struct{
 	
-}
-
-int main(){
-	
-}
+}; 
