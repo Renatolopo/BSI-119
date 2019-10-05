@@ -16,4 +16,19 @@ int main(){
 	int vx[x], vy[y], aux;
 
 	srand(time(NULL));
+
+	for(int i=0; i < x; i++){
+		vx[i] = rand() % (x+y+1);
+
+		for(int j=0; j < i; j++){
+			if(vx[j] == vx[i]){
+				vx[j] = rand() % (x+y+1);
+				j=0;
+			}
+		}
+	}
+
+	for (int i = 0; i < x; ++i){
+		printf("%i\n", vx[i]);
+	}
 }
