@@ -5,8 +5,8 @@
 // Em produção
 
 int main(){
-	int jog, com, winner, cont_jog=0, cont_comp=0;
-	int user[5], comp[5], aux;
+
+	int user[5], comp[5];
 
 	// Define a seed
 	srand(time(NULL));
