@@ -23,7 +23,7 @@ int main()
 		while(1){
 			cont = 0;
 
-			for(c=0;c<i;c++)
+			for(int c=0;c<i;c++)
 				if(vetx[i] == vetx[c])
 					cont++;
 
@@ -65,6 +65,6 @@ int main()
 	for(int i=0; i<y; i++)
 		printf("%i ", vety[i]);
 	
-	// 
-	printf("\nInterseção de X e Y");
+	printf("\n");
+	// printf("\nInterseção de X e Y");
 }
