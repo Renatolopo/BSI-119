@@ -15,7 +15,7 @@ int main()
 	
 	for(i=0;i<n;i++){
 		printf("Competidor %i: ",i+1);
-		scanf(" %[^\n]s",&nome[i]);
+		scanf(" %[^\n]s",nome[i]);
 		printf("\n");
 	}
 	for(i=0;i<n;i++){
