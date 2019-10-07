@@ -38,7 +38,7 @@ void gera_carta(Carta *baralho, int i){
 					pa = 1;		
 			}
 		}
-		//variável para embaralhaos naipes
+		//variável para embaralha os naipes
 		int em;
 		em = rand() %4;
 		if(q<4)
