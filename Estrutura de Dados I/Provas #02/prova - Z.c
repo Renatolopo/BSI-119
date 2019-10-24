@@ -1,19 +1,19 @@
 #include <string.h>
 #include <stdio.h>
 
+// Define as structs
 typedef struct{
 
+	char nome_pessoa[99];
 	int cod_pessoa;
-	char nome[99];
 
 }Pessoa;
 
 typedef struct{
 
+	char desc_grupo[99];
 	int cod_grupo;
-	char desc[200];
-
-}Grupo_social;
+}Grupo;
 
 typedef struct{
 
@@ -24,118 +24,74 @@ typedef struct{
 }Relacionamento;
 
 
-void cadastra_pessoa(Pessoa p[], int cont){
+// Define as funções
+void cadastro_pessoa(Pessoa p[], int x){
+	int flag=1, teste;
+	char nome[99];
 
-	printf("\nInsira o nome da pessoa: ");
-	scanf(" %[^\n]s", p[cont].nome);
+	while(flag){
+		int cont=0;
 
-	p[cont].cod_pessoa = cont;
+		printf("Insira o nome da pessoa: ");
+		scanf(" %[^\n]s", nome);
+
+		if(x > 0){
+			for(int y=0; y<x; y++){
+				teste = strcmp(nome, p[y].nome_pessoa); 
+				if(teste != 0)
+					cont++;
+			}
+			
+			if(cont == x)
+				flag = 0;
+
+		} else {
+			break;
+		}
+
+	}
+
+	strcpy(p[x].nome_pessoa, nome);
+	p[x].cod_pessoa = x;
+
+	// printf("%s\n%i", p[x].nome_pessoa, p[x].cod_pessoa);
 
 	printf("\n");
 }
 
-void cadastra_relacionamento(Pessoa p[], Grupo_social g[], int cont){
-	char nome_a[99], nome_b[99];
-	int teste, cod_a, cod_b;
-
-	while(1){
-		
-		printf("Insira o primeiro nome: ");
-		scanf(" %[^\n]s", nome_a);
-
-		for(int x=0; x<cont; x++){
-			teste = strcmp(nome_a, p[x].nome);
-			
-			if(teste == 0){
-				cod_a = p[x].cod_pessoa;
-				break;
-			}
-		}
-
-		printf("\nNome não encontrado\nInsira um nome novamente!\n");
-	}
-
-	while(1){
-		
-		printf("Insira o segundo nome: ");
-		scanf(" %[^\n]s", nome_b);
-
-		for(int x=0; x<cont; x++){
-			teste = strcmp(nome_b, p[x].nome);
-			
-			if(teste == 0){
-				cod_b = p[x].cod_pessoa;
-				break;
-			}
-		}
-
-		printf("\nNome não encontrado\nInsira um nome novamente!\n");
-	}
-
-	
-
-
-
-
-
-
-
+void cadastro_grupo(){
 }
 
-void relatorio_pessoas(Pessoa p[], int cont){
-	for(int x=0; x<cont; x++){
-		printf("\nCódigo: %i\nnome: %s", p[x].cod_pessoa, p[x].nome);
-	}
-	
-	printf("\n\n");
+void cadastro_relacionamento(Relacionamento r[], int x){
 }
 
+
+// Código main
 int main(){
-	
-	Pessoa p[100];
-	Grupo_social g[100];
-	Relacionamento r[250];
 
-	int cont_p=0, cont_r=0, cont_g=0;
+	Relacionamento r[99];
+	Pessoa p[99];
+	Grupo g[99];
+
 	int opcao, flag=1;
-	char nome[99];
+	int cont_p=0, cont_r=0;
 
 	while(flag){
-		printf("[ 1 ] - Cadastro de pessoa\n");
-		printf("[ 2 ] - Cadastro de Relacionamento\n");
-		printf("[ 3 ] - Relatório: Pessoas\n");
-		printf("[ 4 ] - Relatório: Grupos Sociais\n");
-		printf("[ 5 ] - Relatório: Relacionamentos\n");
-		printf("[ 6 ] - Pessoa mais popular\n");
-		printf("[ 7 ] - Pessoa mais influente\n");
-		printf("[ 8 ] - Sair\n");
-
-		printf("\nInsira uma das opções: ");
-		scanf(" %i",&opcao);
+		printf("[ 1 ] - Cadastro de pessoa: ");
+		printf("[ 2 ] - Cadastro de Relacionamento");
+		scanf("	%i",&opcao);
 
 		switch(opcao){
+			case 0:
+				flag = 0;
+				break;
 			case 1:
-				cadastra_pessoa(p, cont_p);
+				cadastro_pessoa(p, cont_p);
 				cont_p++;
 				break;
 			case 2:
-				cadastra_relacionamento(p, g, cont_r);
+				cadastro_relacionamento(r, cont_r);
 				cont_r++;
-				break;
-			case 3:
-				relatorio_pessoas(p, cont_p);
-				cont_p++;
-				break;
-			case 4:
-				break;
-			case 5:
-				break;
-			case 6:
-				break;
-			case 7:
-				break;
-			case 8:
-				flag = 0;
 				break;
 		}
 	}
