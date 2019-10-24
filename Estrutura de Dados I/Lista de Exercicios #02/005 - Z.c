@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main()
-{
+int main(){
 	int x, y;
 
 	printf("informe X: ");
@@ -66,5 +65,19 @@ int main()
 		printf("%i ", vety[i]);
 	
 	printf("\n");
-	// printf("\nInterseção de X e Y");
+	
+	// Mostra a interceção entre X e Y 
+	printf("\nExistentes em ambos os vetores: ");
+	for(int i=0; i<x; i++){
+		for(int j=0; j<y; j++){
+			if(vetx[i] == vety[j])
+				printf("%i ", vetx[i]);
+		}
+	}
+
+	// Mostra os exclusivos de X
+	printf("\n\nExclusivos de X: ");
+	for(int i=0; i<x; i++){
+		
+	}
 }

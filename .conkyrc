@@ -1,0 +1,75 @@
+conky.config = {
+    alignment = 'top_right',
+    background = false,
+    border_width = 0.5,
+    cpu_avg_samples = 4,
+    default_color = 'white',
+    default_outline_color = 'grey',
+    default_shade_color = 'black',
+    draw_borders = true,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=10',
+    gap_x = 10,
+    gap_y = 85,
+    minimum_height = 5,
+    minimum_width = 190,
+    net_avg_samples = 2,
+    double_buffer = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+    own_window = true,
+    own_window_colour = '000000',
+    own_window_class = 'Conky',
+    own_window_argb_visual = true,
+    own_window_argb_count = 0,
+    own_window_type = 'dock',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    stippled_borders = 0,
+    update_interval = 0.1,
+    uppercase = false,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = false
+}
+
+conky.text = [[
+${hr 2}
+
+${font DejaVu Sans Mono:size=14}${alignc}${time %I:%M:%S}
+${font size 10}${alignc}${time %A, %B %e, %Y}
+${font Rajdhani Bold:pixelsize=14}
+${hr 2}
+Uptime ${alignr}$uptime
+Bateria ${alignr}${battery_percent}%
+${hr 2}
+RAM ${alignr}$memperc%
+${membar 4}
+Swap $swapperc%
+${swapbar 4}
+CPU: ${alignc}$cpu%${alignr}Temp: ${acpitemp}°C 
+${cpugraph 20} 
+core 1 ${cpubar cpu1}
+core 2 ${cpubar cpu2}
+${hr 2}
+
+Sistema
+${voffset -17}${offset 70}${fs_free /}  /  ${fs_used /}
+${fs_size /}
+${voffset -17}${offset 70}${fs_bar 4 /}
+Home
+${voffset -17}${offset 70}${fs_free /home}  /  ${fs_used /home}
+${fs_size /home}
+${voffset -17}${offset 70}${fs_bar 4 /home}
+
+${hr 2}
+
+▼ ${downspeed wlp1s0} ${alignr}${totaldown wlp1s0}
+${downspeedgraph wlp1s0 32}
+▲ ${upspeed wlp1s0} ${alignr}${totalup wlp1s0}
+${upspeedgraph wlp1s0 32}
+]]
