@@ -202,8 +202,15 @@ void relatorio_pessoa(Pessoa p[], int x){
 
 // função mostra o relatório de grupos sociais
 void relatorio_grupos_sociais(Grupo g[], int z){
+	int cont=0;
+
 	for(int i=0; i<z; i++){
-		printf("Codigo: %i\nDescrição: %s\n\n", g[i].cod_grupo, g[i].desc_grupo);
+		if(g[i].cod_grupo == 0 && cont == 0){
+			printf("Codigo: %i\nDescrição: %s\n\n", g[i].cod_grupo, g[i].desc_grupo);
+			cont++;
+		} else if(g[i].cod_grupo != 0){
+			printf("Codigo: %i\nDescrição: %s\n\n", g[i].cod_grupo, g[i].desc_grupo);
+		} 
 	}
 }
 
