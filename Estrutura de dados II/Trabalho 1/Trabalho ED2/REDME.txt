@@ -1,0 +1,29 @@
+-----------------------------------> Instruções para uso do Programa <------------------------------------------------------
+
+	O programa está dividido em dois arquivos main.py, funções.py, um contém algumas funções, é o outro o programa principal.
+	há também duas pastas, Dados é estados.
+
+	A pasta Dados contém um arquivo .csv, com os estados gerados automaticamente é manualmente.
+	A pasta Estados contém vários arquivos .txt, com cidades reais e um com alguns estados.
+	
+
+	para a execução do script é necessário ter o interpretador python3 instalado.
+	
+	As bibliotecas usadas são todas padrões, sendo csv, ramdon.
+	
+
+-----------------------------------> Descrição do programa <----------------------------------
+
+	O programa tem como objetivo simular o cadastramento de cidades e suas respectivas população.
+
+------> Funcionamento
+	O programa tem duas funções de cadastramento, uma de forma manual e outra aleatória.
+	Os dados para o cadastro aleatório é retirado dos arquivos  .csv em “estados/*arquivo.csv
+
+------> Ordenação
+	O critério utilizado para a ordenação foi o número de Habitantes.
+
+------> Persistência dos dados
+	Após o cadastro das cidades os dados são armazenado em “Dados/cidade.csv”, assim que o programa é executado novamente os dados armazenado é substituído por um arquivo vazio. 
+	Após executar a  ordenação, os dados não são salvos, porém a função  está implementada mas encontra-se comentada, as instruções para salvar os dados ordenados está na função getCidade().
+
