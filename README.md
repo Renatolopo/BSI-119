@@ -1,6 +1,8 @@
 # BSI-119
 
-Repositório para compartilhar códigos feitos pelos alunos do IFNMG da turma BSI-119.
+Repositório para compartilhar códigos feitos pelos alunos de Sistemas de Informação do IFNMG turma BSI-119.
+
+ - Obs: Se vc veio aqui só para copiar os codigos dos colegunhas vc não é bem vindo, contribua tambem ¯\_(ツ)_/¯
 
 # Informações sobre a organização do repositório
 ## ED I
