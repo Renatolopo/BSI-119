@@ -21,7 +21,7 @@ def replace_nan(row):
 df = pd.read_csv('./dadosgovbr---2017.csv', sep=';', encoding='latin-1')
 con = pymysql.connect(host='localhost',
                       user='root',
-                      password='renato20',
+                      password='',
                       db='dadosgovbr')
 
 
